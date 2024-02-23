@@ -1,0 +1,12 @@
+.movie-table{
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    /* margin: 0 0.5rem; */
+    margin-left: 1.2rem;
+}
+
+.table{
+    width:100%;
+    
+}

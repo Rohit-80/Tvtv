@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "moviepj",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

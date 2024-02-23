@@ -1,0 +1,30 @@
+
+<div class="form" >
+  <mat-toolbar style="margin-bottom: 0.3rem;">
+    <p>Login</p>
+  </mat-toolbar>
+            <form [formGroup]="reactiveForm" (ngSubmit)="submitLoginForm()">
+                
+                <p>
+                    <mat-form-field>
+                        <mat-label>Enter your username</mat-label>
+                        <input matInput placeholder="eg.-Andrew" formControlName="username" required>
+                        <!-- @if (reactiveForm.controls?.['username']?.invalid) { -->
+                          <!-- <mat-error>{{getErrorMessage()}}</mat-error> -->
+                        <!-- } -->
+                      </mat-form-field>
+                </p>
+                <p>
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </p>
+                  <div class="button">
+                    <button  mat-raised-button color="accent" [disabled]="!reactiveForm.valid"  class="button"> Login </button>
+                    </div>
+         </form>
+        </div>

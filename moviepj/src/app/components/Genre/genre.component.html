@@ -1,0 +1,19 @@
+<!-- <ul class="list-group">
+    <li class="list-group-item" ><a (click)="handleGenre('All')" [ngClass]="{'list-group-item active' : Val == 'All'}" > All Genre </a></li>
+    <li class="list-group-item"><a (click)="handleGenre('Action')" [ngClass]="{'list-group-item active' : Val == 'Action'}" > Action </a></li>
+    <li class="list-group-item"><a (click)="handleGenre('Comedy')" [ngClass]="{'list-group-item active' : Val == 'Comedy'}" > Comedy </a></li>
+    <li class="list-group-item"><a (click)="handleGenre('Romance')" [ngClass]="{'list-group-item active' : Val == 'Romance'}" > Romance </a></li>
+    <li class="list-group-item"><a (click)="handleGenre('Thriller')" [ngClass]="{'list-group-item active' : Val == 'Thriller'}"> Thriller </a></li>
+  </ul> -->
+
+
+<div class="genre">
+  <mat-nav-list style="background-color: #707070;" class="genre-list">
+    @for (link of genre; track link) {
+    <mat-list-item class="genre-list-item" [activated]="curActive == link"  (click)="sortGenre(link,pid)">
+      <a matListItemTitle>{{ link }}</a>
+      
+    </mat-list-item>
+    }
+  </mat-nav-list>
+</div>

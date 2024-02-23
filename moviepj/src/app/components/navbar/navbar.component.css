@@ -1,0 +1,12 @@
+.nav-list{
+    display: flex;
+    justify-content: center;
+    margin: 0.1rem;
+}
+.nav-list-item{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 0 1rem;
+    line-height: 3rem;
+}

@@ -1,0 +1,16 @@
+<mat-list role="list" style="background-color: rebeccapurple;" class="nav-list">
+    <mat-list-item class="nav-list-item" role="listitem"> 
+  <button mat-stroked-button color="basic" (click)="home()" >Home</button>
+
+    </mat-list-item>
+    <mat-list-item class="nav-list-item" *ngIf="islogin"  role="listitem">
+          <button mat-stroked-button color="basic"  (click)="profilefn()">{{ islogin ? profile : 'Profile'}}</button></mat-list-item>
+    <mat-list-item class="nav-list-item"  role="listitem">
+        <button mat-stroked-button color="basic" (click)="islogin ? logout() : login()">{{islogin ? 'logout' : 'login'}}</button>
+    </mat-list-item>
+    <mat-list-item class="nav-list-item" *ngIf="!islogin" role="listitem">
+        <button mat-stroked-button color="basic" (click)="register()">Register</button>
+    </mat-list-item>
+  </mat-list>
+
+ 

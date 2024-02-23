@@ -1,0 +1,32 @@
+.form{
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    background-color: #663399 ;
+}
+
+form p mat-form-field{
+    width: 100%;
+    line-height: 3.4rem;
+    
+    /* background-color: red; */
+}
+form p {
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* padding: 0 1rem; */
+}
+.option-field{
+    color: black;
+   /* background-color: red; */
+}
+
+.button{
+   justify-content: center;
+   text-align: center;
+   padding: 0.3rem;
+   /* background-color: red; */
+   
+}

@@ -1,0 +1,85 @@
+<!-- <div id="mains">
+     <div class="centerser">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <app-filtercp></app-filtercp>
+            </div>
+            <div class="col">
+                <button class="btn btn btn-primary" (click)="addMovie()" > Add Movie </button>
+                <button class="btn btn btn-outline-success" (click)="login()" > Login </button>
+                <table class="table" border="2">
+                    <thead>
+                        <tr scope="col">
+                            <th> Movie Name </th>
+                            <th> Genre </th>
+                            <th> Stocks </th>
+                            <th> Rating </th>
+                            <th>Fav</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="col" *ngFor="let movie of Movies">
+                            <td> {{movie.name}}</td>
+                            <td>{{ movie.genre}}</td>
+                            <td> {{movie.stocks}}</td>
+                            <td> {{movie.rating}}</td>
+                            <td *ngIf="movie.isfav" ><i [ngClass]= "{'fa-regular fa-heart' : movie.isfav}" (click)="favMovie(movie.id)"></i></td>
+                            <td *ngIf="!movie.isfav"><i [ngClass]= "{'fa-solid fa-heart' : !movie.isfav}" (click)="favMovie(movie.id)"></i></td>
+
+                            <td> <button class="btn btn-sm btn-primary" (click)="handleUpdate(movie.id)" > Update </button></td>
+                            <td> <button class="btn btn-sm btn-danger"> Delete </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div> -->
+
+
+
+
+<ng-template #movietables>
+    <app-genre [pid]="1"></app-genre>
+    <app-movietable  [movieSource]="movieSource" [child] = "1"> 
+        <button *ngIf="isLogins && movieSource != 'AllMovies'"  mat-flat-button color="accent" style="margin: 0.1rem;" (click)="addMovie()">Add</button>
+    </app-movietable>
+</ng-template>
+
+<div class="mid-container">
+  
+    <mat-tab-group [color]="'primary'" [backgroundColor]="'primary'" (selectedTabChange)="changeData($event)" >
+        <mat-tab style="color: red;"   label="All Movies">
+          
+
+            
+           <!-- <ng-container  [ngTemplateOutlet]="movietables"  >
+
+           </ng-container> -->
+           <ng-container  [ngTemplateOutlet]="movietables"  >
+
+           </ng-container>
+        
+            
+            
+        </mat-tab>
+      
+        <mat-tab *ngIf="isLogins" label="My Movies"  > 
+            <!-- <app-genre [pid]="2"></app-genre> -->
+            <!-- <ng-container  [ngTemplateOutlet]="movietables"  >
+
+            </ng-container> -->
+            <!-- <app-movietable [movieSource]="movieSource" [child] = "2">
+        
+                
+            </app-movietable> -->
+            <ng-container  [ngTemplateOutlet]="movietables"  >
+
+            </ng-container>
+        </mat-tab>
+      </mat-tab-group>
+     
+     
+</div>

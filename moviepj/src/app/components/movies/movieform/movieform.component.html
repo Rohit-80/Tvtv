@@ -1,0 +1,87 @@
+   <!-- <button  mat-raised-button color="accent"  class="button"> {{isUpdate ? 'Update' : 'Submit' }}</button> -->
+<div class="form" >
+
+   <!-- <button  mat-raised-button color="accent"  class="button"> {{isUpdate ? 'Update' : 'Submit' }}</button> -->
+<form [formGroup]="reactiveForm" (ngSubmit)="submitMovieForm()">
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Movie name</mat-label>
+            <input matInput placeholder="i.e. The Hulk" id="moviename" formControlName="name">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <mat-hint>Movie name</mat-hint> -->
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <mat-label>Genre</mat-label>
+            <mat-select name="genre" formControlName="genre">
+                <mat-option *ngFor="let gen of genre;" [value]="gen">{{gen}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </p>
+
+   
+
+    <!-- <div class="mb-3">
+            <select class="form-select" name="genre" formControlName="genre"> 
+                Genre
+                <option value="Action">Action</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Romance">Romance</option>
+                <option value="Horror">Horror</option>
+            </select>
+        </div> -->
+
+    <p>
+        <mat-form-field appearance="outline" style="background-color: #505050; ">
+            <mat-label style="color: white;">Stocks</mat-label>
+            <input matInput placeholder="1-100" formControlName="stocks">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline" style="background-color: #505050; ">
+            <mat-label  style="color: white;">Rating</mat-label>
+            <input matInput placeholder="1-10" formControlName="rating">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+    </p>
+    <p>
+        
+        <mat-checkbox  formControlName="isfav" class="option-field" style="transform: scale(1.2);" >Favorite</mat-checkbox>
+        <span>
+            <label style="color: white ;  font-size: 1rem; vertical-align:baseline;" > Author :&rpar;  </label>
+           <mat-radio-group  formControlName="author">
+          <mat-radio-button class="option-field" value="All">Global</mat-radio-button>
+          <mat-radio-button class="option-field" *ngIf="user != ''" [value]="user"> {{user}} </mat-radio-button>
+        </mat-radio-group>
+    </span>
+    </p>
+  
+  
+
+    <!-- <div class="mb-3"> -->
+    <!-- <label for="stocks" class="form-label">Stocks</label> -->
+    <!-- <input type="text" class="form-control" formControlName="stocks" placeholder="i.e. 100" id="stocks" aria-describedby="emailHelp"> -->
+    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    <!-- </div> -->
+
+    <!-- <div class="mb-3"> -->
+    <!-- <label for="rating" class="form-label">Rating</label> -->
+    <!-- <input type="text" class="form-control" formControlName="rating" placeholder="i.e. 10" id="rating" aria-describedby="emailHelp"> -->
+    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    <!-- </div> -->
+
+
+    <div class="button">
+        <button  mat-raised-button color="accent" [disabled]="!reactiveForm.valid"  class="button"> {{isUpdate ? 'Update' : 'Submit' }}</button>
+        </div>
+</form>
+
+ <!-- {{reactiveForm.valid}} -->
+</div>

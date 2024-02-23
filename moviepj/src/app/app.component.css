@@ -1,0 +1,20 @@
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+.header{
+    height : auto;
+    width: 100%;   
+}
+
+.container{
+    
+    padding: 0;
+    margin: 0;
+    margin-top: 3rem;
+    width: 100%;
+    height: auto;
+}

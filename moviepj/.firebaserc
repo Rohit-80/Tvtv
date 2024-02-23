@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "movietv-ff382": {
+      "hosting": {
+        "moviepj": [
+          "movietv-ff382"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "movietv-ff382"
+  }
+}
