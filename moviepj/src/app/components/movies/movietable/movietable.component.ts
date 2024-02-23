@@ -1,4 +1,4 @@
-import { CSP_NONCE, Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
+import {  Component, Input, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
 import { MovieService } from '../../../../Services/movie.service';
 import { MatTableModule } from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
@@ -6,13 +6,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { Store, select } from '@ngrx/store';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
-import { MoviesComponent } from '../movies.component';
+
 import { UsersService } from '../../../../Services/users.service';
 import { AuthService } from '../../../../Services/auth.service';
 import { RentService } from '../../../../Services/rent.service';
 import { MovieInterface } from '../../../../utils/moviesdb';
 import { getMovies, movietableActions, sortaction } from '../../../store/action/movietable.action';
-import { Observable, map } from 'rxjs';
+import {  map } from 'rxjs';
 import { AppState, SortMovietable, seleUsers } from '../../../store/action/movietable.selector';
 import { AsyncPipe, NgFor } from '@angular/common';
 import {
@@ -91,7 +91,8 @@ export class MovietableComponent implements OnInit,OnChanges  {
      sort(id : string,user : string){
       // console.log(this.dataSource)
 
-      this.store.dispatch(sortaction({sortId:id,curUser : user}))
+      this.store.dispatch(sortaction({sortId:id,curUser : user}));
+
       // console.log('datasssssssss',id,this.dataSource,this.movieSource,'child',this.child)
       // console.log(id)
       //     if(id == 'All Genre'){
@@ -130,7 +131,7 @@ export class MovietableComponent implements OnInit,OnChanges  {
     
         dialogRef.afterClosed().subscribe(result => {
            if(result == 'yes')
-          this.route.navigate(['/add' , id])
+           this.route.navigate(['/add' , id])
         });
          
      }
@@ -139,8 +140,8 @@ export class MovietableComponent implements OnInit,OnChanges  {
       this.store.dispatch(movietableActions.like({id : id}))
      }
      deleteMovie(id : string){
-      this.http.deleteMovie(id)
-      this.store.dispatch(getMovies())
+      this.http.deleteMovie(id).subscribe(data=> this.store.dispatch(getMovies()));
+      // this.store.dispatch(getMovies())
         // this.dataSource = this.dataSource.filter((movie: { id: number; })=>movie.id != id);
         // this.store.dispatch(movietableActions.delete({id : id}))
         
@@ -162,7 +163,5 @@ export class MovietableComponent implements OnInit,OnChanges  {
   imports: [MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule],
 })
 export class DialogElement {
-  onthanks(){
 
-  }
 }

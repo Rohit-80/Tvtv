@@ -1,5 +1,6 @@
 import { userMovies , getAllUserMovies} from './../utils/moviesdb';
 import { Injectable } from '@angular/core';
+import { HttpService } from './http.service';
 // import { UserInterface, Users } from '../utils/users';
 
 export interface UserInterface  {
@@ -19,22 +20,36 @@ export class UsersService {
  
   user = Users;
   curuser:any;
-  constructor() {  }
+  constructor(private http : HttpService) {  }
 
  
   createUser(username : string, password : string){
+     this.http.registerUser({username : username,password : password}).subscribe()
       this.user.push({username : username,password : password});
   }
-  existUser(username : string, password : string) : boolean{
+  existUser(username : string, password : string) : Promise<any>{
+
+
+     return new Promise((res,rej)=>{
+      this.http.getAllUsers().subscribe(data=> {
+        let us = Object.values(data);
+        us.forEach(u=>{
+           if(u.username == username && u.password == password){
+            this.curuser = username;
+            console.log('ues')
+              res('true')
+          }
+   
+        })
+        rej();
+      })
+
+      
+     })
      
-    console.log(Users)
-    let find = Users.find(u=>u.password === password && u.username == username);
-    // console.log(Users,this.user,find,username , password,find )
-     if(find){
-      this.curuser = find;
-      return true;
-     };
-     return false;
+   
+    
+    
   }
   usermovies : any = getAllUserMovies();
   addUserMovie(username : string,movie:any){

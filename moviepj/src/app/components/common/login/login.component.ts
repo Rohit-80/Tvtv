@@ -39,14 +39,23 @@ export class LoginComponent implements OnInit {
        })
    }
     submitLoginForm(){
-      console.log(this.userservice.existUser(this.reactiveForm.value['username'],this.reactiveForm.value['password']));
-       if(this.userservice.existUser(this.reactiveForm.value['username'],this.reactiveForm.value['password'])){
-            this.authservice.login(this.reactiveForm.value['username'],this.reactiveForm.value['password']);
-           this.toast.success('Welcome ' + this.reactiveForm.value['username'] + " !!" )
-           this.route.navigate(['/home']);
-       }else{
-        this.toast.error('Oops ' + this.reactiveForm.value['username'] + " doesn't exist" )
+      let username = this.reactiveForm.value['username'];
+      let passwordp = this.reactiveForm.value['password']
+      console.log(this.userservice.existUser(this.reactiveForm.value['username'],passwordp));
+
+      this.userservice.existUser(username,passwordp).then(res=>{
+        this.authservice.login(username,passwordp);
+
+
+
+        this.toast.success('Welcome ' + username + " !!" )
+        this.route.navigate(['/home']);
+      }).catch(err=>{
+        this.toast.error('Oops ' + username + " doesn't exist" )
+      })
+      
+     
         // this._snackBar.open("User doesn't exist", 'Try Again');
-       }
+       
     }
 }

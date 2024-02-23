@@ -21,7 +21,7 @@ export class AuthService implements CanActivate,OnInit{
 
   constructor() { 
     let tempuser = localStorage.getItem('authtoken')?.split('|')[0];
-       console.log(tempuser)
+   
        if(tempuser){
           this.profile = tempuser;
           this.islogin = true;

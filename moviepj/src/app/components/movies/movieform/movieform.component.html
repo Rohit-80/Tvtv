@@ -1,9 +1,5 @@
-   <!-- <button  mat-raised-button color="accent"  class="button"> {{isUpdate ? 'Update' : 'Submit' }}</button> -->
-<div class="form" >
-
-   <!-- <button  mat-raised-button color="accent"  class="button"> {{isUpdate ? 'Update' : 'Submit' }}</button> -->
+<div class="form" >  
 <form [formGroup]="reactiveForm" (ngSubmit)="submitMovieForm()">
-
     <p>
         <mat-form-field appearance="fill">
             <mat-label>Movie name</mat-label>
@@ -20,19 +16,6 @@
             </mat-select>
         </mat-form-field>
     </p>
-
-   
-
-    <!-- <div class="mb-3">
-            <select class="form-select" name="genre" formControlName="genre"> 
-                Genre
-                <option value="Action">Action</option>
-                <option value="Thriller">Thriller</option>
-                <option value="Comedy">Comedy</option>
-                <option value="Romance">Romance</option>
-                <option value="Horror">Horror</option>
-            </select>
-        </div> -->
 
     <p>
         <mat-form-field appearance="outline" style="background-color: #505050; ">
@@ -83,5 +66,4 @@
         </div>
 </form>
 
- <!-- {{reactiveForm.valid}} -->
 </div>

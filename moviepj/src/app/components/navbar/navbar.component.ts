@@ -4,7 +4,6 @@ import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../Services/auth.service';
 import {MatTabsModule} from '@angular/material/tabs';
-import { UsersService } from '../../../Services/users.service';
 import { NgIf } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 
@@ -24,11 +23,12 @@ export class NavbarComponent implements OnInit {
     toast = inject(ToastrService)
     profile : string = this.authservice.profile
     ngOnInit() {
-      console.log('loop')
+   
       this.authservice.validUser.subscribe( (data ) =>{
         this.islogin   = data.login
         this.profile   = data.profile     
       })
+      
       this.islogin   = this.authservice.islogin;
       this.profile   = this.authservice.profile
     }

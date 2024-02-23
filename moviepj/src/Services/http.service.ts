@@ -26,7 +26,7 @@ export class HttpService {
  }
 
  deleteMovie(id:string){
-    this.http.delete(this.url+'home/'+id+'.json').subscribe();
+    return this.http.delete(this.url+'home/'+id+'.json');
 
  }
 
@@ -39,6 +39,14 @@ export class HttpService {
    Movies.forEach(movie=>{console.log(movie);   this.http.post(this.url + 'home.json',movie).subscribe()})
  }
 
+
+ registerUser(user:any){
+   return this.http.post(this.url + 'user.json',user);
+ }
+
+ getAllUsers(){
+  return this.http.get(this.url + 'user.json');
+ }
 
 
 }

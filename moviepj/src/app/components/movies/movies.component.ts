@@ -46,18 +46,19 @@ export class MoviesComponent implements OnInit {
      val = 0
      userservice : UsersService = inject(UsersService)
      authservice : AuthService = inject(AuthService)
-  //    Movies : any[] = [];
-  //    MainMovies : any[] = [];
-     
+
+
   changeData(tab:any){
-    // this.isLogin = this.authservice.islogin;
-     if(tab.index == 1){
-          this.movieSource = 'MyMovies';
-          // console.log(this.movieSource)
-     }else if(tab.index == 0){
+    
+    //  if(tab.index == 1){
+    //       this.movieSource = 'MyMovies';
+        
+    //  }else if(tab.index == 0){
       
-          this.movieSource = 'AllMovies';
-     }
+    //       this.movieSource = 'AllMovies';
+    //  }
+
+     this.movieSource = (tab.index == 0 ? 'AllMovies' : 'MyMovies');
    }
    
      ngOnInit() {
@@ -79,7 +80,7 @@ export class MoviesComponent implements OnInit {
       this.authservice.validUser.subscribe( (data ) =>{
         this.isLogins = true
        
-        console.log('tom',this.isLogins,this.val)
+        // console.log('tom',this.isLogins,this.val)
        
         // this.profile   = data.profile     
       })
@@ -105,11 +106,5 @@ export class MoviesComponent implements OnInit {
     
     console.log(this.isLogins)
   }
-  //  handleUpdate(id:string){
-  //   this.route.navigate(['/add',id])
-  //  }
 
-  //  login(){
-  //   this.route.navigate(['/login'])
-  //  }
 }

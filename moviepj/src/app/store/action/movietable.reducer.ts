@@ -1,13 +1,8 @@
-import { AppState, selectedGenre } from './movietable.selector';
-import { Action, createReducer, on } from '@ngrx/store';
+import { AppState } from './movietable.selector';
+import {  createReducer, on } from '@ngrx/store';
 import { loadMyDataSuccess, movietableActions, sortaction } from './movietable.action';
 import { MovieInterface, Movies } from '../../../utils/moviesdb';
-import { Genre } from '../../../utils/genre';
-import { UserInterface } from '../../../Services/users.service';
 
-import { state } from '@angular/animations';
-import { AuthService } from '../../../Services/auth.service';
-import { HttpService } from '../../../Services/http.service';
 export interface State {
     dataSource: MovieInterface[]
 }
@@ -24,7 +19,7 @@ export const initialState: AppState = {
 
 export const movietablereducer = createReducer(
     initialState,
-    on(sortaction, (state, { sortId,curUser }) => { console.log(state.allmovies) ; return {...state,selectedGenre : sortId,selectedUser : {username :curUser,password : 'all'}}}
+    on(sortaction, (state, { sortId,curUser }) => {   return {...state,selectedGenre : sortId,selectedUser : {username :curUser,password : 'all'}}}
     ),
     // on(movietableActions.delete,(state,{ id })=>({...state,allmovies : state.allmovies.filter((idm: { id: number; })=> 
     // {   
@@ -48,14 +43,14 @@ export const movietablereducer = createReducer(
         return ids})})),
         on(movietableActions.like,(state,{ id })=>({...state, allmovies : state.allmovies.map((ids : any)=>{ 
             if(ids.id == id){
-               console.log('asdf',ids)
+            
                let ind = MoviesT.indexOf(ids);
                ids = {...ids,isfav : !ids.isfav};
                MoviesT[ind] = ids;
                console.log(ind,MoviesT)
             }
            return ids})})),
-           on(movietableActions.add,(state,{ movie,auth })=>{   MoviesT.push({...movie,author : auth ,isfav : false,id : MoviesT.length + 1}); console.log('------------------',movie) ; return ({...state,allmovies : [...state.allmovies]});}
+           on(movietableActions.add,(state,{ movie,auth })=>{    return ({...state,allmovies : [...state.allmovies]});}
         //    ({...state, allmovies : ()=> { MoviesT.push({...movie,id : MoviesT.length + 2}) 
             
        
@@ -63,5 +58,5 @@ export const movietablereducer = createReducer(
         //    return {...state.allmovies,...{...movie,id : MoviesT.length + 2}}}
         // })
         ),
-        on(loadMyDataSuccess,(state , {data})=>{  console.log('data',); return ({...state,allmovies:[...data]})})
+        on(loadMyDataSuccess,(state , {data})=>{  return ({...state,allmovies:[...data]})})
 )

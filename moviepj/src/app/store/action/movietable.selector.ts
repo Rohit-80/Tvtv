@@ -11,7 +11,7 @@ export interface AppState {
   }
  export const getcounterstate=createFeatureSelector<AppState>('mtable');
 
-export const selectedGenre = createSelector(getcounterstate ,(state:AppState) => { console.log('called'); return state.selectedGenre});
+export const selectedGenre = createSelector(getcounterstate ,(state:AppState) => { return state.selectedGenre});
 export const selectedUser = createSelector(getcounterstate ,(state:AppState) => state.selectedUser);
 export const selectAllMovies = createSelector(getcounterstate ,(state:AppState) => state.allmovies);
 

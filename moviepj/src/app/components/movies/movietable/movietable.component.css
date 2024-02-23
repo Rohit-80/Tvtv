@@ -10,3 +10,13 @@
     width:100%;
     
 }
+@media (max-width:1500px) {
+    
+    .movie-table{
+        display: block;
+        width: 100%;
+        height: auto;
+        /* margin: 0 0.5rem; */
+        margin-left: 0;
+    }
+}

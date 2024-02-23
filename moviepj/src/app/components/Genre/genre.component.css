@@ -15,3 +15,18 @@
    
     color:black
 }
+
+@media (max-width:1500px) {
+    .genre{
+        display: flex;
+        background-color: red;
+        vertical-align: top;
+        
+    }
+    .genre-list{
+        background-color: red;
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+}

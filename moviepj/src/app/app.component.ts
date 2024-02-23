@@ -18,7 +18,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'moviepj';
+  title = 'mvtv';
 
   ischange = false;
   http : HttpService = inject(HttpService)
@@ -30,28 +30,17 @@ export class AppComponent {
   Store = inject(Store)
   constructor(private toastr: ToastrService) {}
 
-  showSuccess() {
-   
-  }
-  change(){
-    // this.toastr.success('Hello world!', 'Toastr fun!');
-    this.http.pushMovie();
-    // this.http.addMovie()
-    // this.http.getAllMovies().subscribe(movies=> { console.log(movies) ;this.Store.dispatch(loadMyDataSuccess({data:movies}))})
+  // change(){
+  //   // this.toastr.success('Hello world!', 'Toastr fun!');
+  //   this.http.pushMovie();
+  //   // this.http.addMovie()
+  //   // this.http.getAllMovies().subscribe(movies=> { console.log(movies) ;this.Store.dispatch(loadMyDataSuccess({data:movies}))})
     
 
-  }
+  // }
 
   ngOnInit(){
-      this.sub.subscribe(data=>{
-        console.log('first',data)
-      })
-
-      
-
-      this.sub.subscribe(data=>{
-        console.log('second',data)
-      })
+     
   }
   
 }
