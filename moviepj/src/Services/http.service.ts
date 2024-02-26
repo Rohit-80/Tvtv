@@ -17,7 +17,6 @@ export class HttpService {
  }
 
  addMovie(movie : MovieInterface){
-   console.log('addmeeeeeeeeeeeeeeeeeee',movie)
    return this.http.post(this.url+'/home.json',movie);
  }
 

@@ -3,11 +3,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card'
 import { RentService } from '../../../../Services/rent.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-rent',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule],
+  imports: [MatCardModule, MatButtonModule,RouterLink],
   templateUrl: './rent.component.html',
   styleUrl: './rent.component.css'
 })

@@ -4,7 +4,7 @@
         <mat-form-field appearance="fill">
             <mat-label>Movie name</mat-label>
             <input matInput placeholder="i.e. The Hulk" id="moviename" formControlName="name">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-icon matSuffix>text_fields</mat-icon>
             <!-- <mat-hint>Movie name</mat-hint> -->
         </mat-form-field>
     </p>
@@ -13,7 +13,9 @@
             <mat-label>Genre</mat-label>
             <mat-select name="genre" formControlName="genre">
                 <mat-option *ngFor="let gen of genre;" [value]="gen">{{gen}}</mat-option>
+                
             </mat-select>
+            <mat-icon matSuffix>format_list_bulleted</mat-icon>
         </mat-form-field>
     </p>
 
@@ -21,7 +23,7 @@
         <mat-form-field appearance="outline" style="background-color: #505050; ">
             <mat-label style="color: white;">Stocks</mat-label>
             <input matInput placeholder="1-100" formControlName="stocks">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-icon matSuffix>123</mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
         </mat-form-field>
     </p>

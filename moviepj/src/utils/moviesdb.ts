@@ -11,44 +11,62 @@ export interface MovieInterface  {
 
 export let Movies : MovieInterface[] =
      [{
-        author : 'All' ,
-        id : 1,
-        name : 'The Avengers',
+        author : 'Tom' ,
+        id : 10,
+        name : "The Lord of the Rings: The Return of the King' (2003)",
         stocks : 100,
-        rating : 8,
-        genre : 'Action',
-        isfav : false
-    },
-    {
-        author : 'All' ,
-        id : 2,
-        name : 'Man of steel',
-        stocks : 95,
-        rating : 8,
-        genre : 'Action',
+        rating : 9,
+        genre : 'Adventure',
         isfav : true
     },
     {
-        author : 'All' ,
-        id : 3,
-        name : 'Thor',
-        stocks : 85,
-        rating : 8,
-        genre : 'Thriller',
-        isfav : false
+        author : 'Tom' ,
+        id : 11,
+        name : "3 'Inception' (2010) ...",
+        stocks : 100,
+        rating : 9,
+        genre : 'Adventure',
+        isfav : true
     },
     {
-        author : 'All' ,
-        id : 4,
-        name : 'Ant Man',
+        author : 'Tom' ,
+        id : 12,
+        name : "Crazy Rich Asians(2003)",
         stocks : 100,
+        rating : 9,
+        genre : 'Rom-Com',
+        isfav : true
+    },
+    {
+        author : 'Tom' ,
+        id : 13,
+        name : 'When Harry Met Sally?',
+        stocks : 95,
         rating : 8,
-        genre : 'Comedy',
+        genre : 'Rom-com',
+        isfav : true
+    },
+    {
+        author : 'Tom' ,
+        id : 14,
+        name : 'Thank God(2023)',
+        stocks : 85,
+        rating : 8,
+        genre : 'Fantasy',
         isfav : false
     },
     {
         author : 'Tom' ,
-        id : 5,
+        id : 15,
+        name : 'The Crash Landing',
+        stocks : 100,
+        rating : 8,
+        genre : 'Fantasy',
+        isfav : false
+    },
+    {
+        author : 'Tom' ,
+        id :18,
         name : '500 Days of Summer',
         stocks : 840,
         rating : 8,
@@ -56,21 +74,21 @@ export let Movies : MovieInterface[] =
         isfav : false
     },
     {
-        author : 'All' ,
-        id : 7,
-        name : ' Without a Paddle (2004) ',
+        author : 'Tom' ,
+        id : 19,
+        name : ' Without Exit (2004) ',
         stocks : 840,
         rating : 8,
-        genre : 'Comedy',
+        genre : 'Thriller',
         isfav : false
     },
     {
-        author : 'All' ,
-        id : 7,
-        name : ' The Forest Gump ',
+        author : 'Tom' ,
+        id : 20,
+        name : ' The Rock Loop ',
         stocks : 840,
         rating : 10,
-        genre : 'Comedy',
+        genre : 'Action',
         isfav : true
     }
    
